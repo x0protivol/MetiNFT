@@ -1,2 +1,2 @@
-# MetiNFT
+# Thunderbelt
 NFT marketplace for galleries
