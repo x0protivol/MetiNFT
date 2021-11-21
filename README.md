@@ -24,8 +24,13 @@ If compile successful, check if `artifacts` folder exists.
 If exists then run below commands:
 ```
 yarn build
+```
+To start the project on local environment:
+```
 yarn start
 ```
+The server will run on `http://localhost:3000/`
+
 
 
 # Deployed smart contracts on Metis Testnet
