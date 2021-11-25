@@ -1,7 +1,7 @@
 ## How to run
 
-1. Update ganache accounts private key in hardhat.config.js
-   Or you can register your network in hardhat.config.js
+1. Update ganache accounts private key in hardhat.config.js \n
+   Or you can register your network in hardhat.config.js \n
    **: If you are using your own network, you should update rpcEndpoint in pages\index.js line 19.
    ```
    let rpcEndpoint = "http://127.0.0.1:7545";
