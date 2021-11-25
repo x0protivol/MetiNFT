@@ -1,30 +1,18 @@
-## IPFS NFT Minting Website
+## How to run
 
-Metis Deployment
+1. Update ganache accounts private key in hardhat.config.js
+   Or you can register your network in hardhat.config.js
+   **: If you are using your own network, you should update rpcEndpoint in pages\index.js line 19.
+   ```
+   let rpcEndpoint = "http://127.0.0.1:7545";
+   ```
 
-Node Version : >= 14.0
-
-
-# Configuration 
-Update Hardhat config file.
-You need to add the private key & the ehterscan API key from the hardhat.config.js
-
-
-# Command to Run the project
-```
-yarn install        // installing node modules
-npx hardhat compile // Compiling & Generating ABI
-yarn build          // Building frontend
-yarn start          // Running frontend
+2. run 
+``` 
+npm install 
+npx hardhat run --network your_network_name .\scripts\deploy.js
+npm run build
+npm start
 ```
 
-# Command to Deploy the smart contrat on Metis
-```
-npx hardhat run scripts/deploy.js --network metis
-```
-
-# Deployed smart contracts on Metis Testnet
-```
-  export const nftmarketaddress = "0xbEB1859D6259025bCAfdb771868a884Cd27Ac4f7"
-  export const nftaddress = "0x928bACe156cB1f31fdc96436f6F33a6E5510047E"
-```
+![Video_21-11-25_12-14-12](https://user-images.githubusercontent.com/37606416/143383889-71c62b8c-a6c7-4662-9fa2-45498dac0b9a.gif)

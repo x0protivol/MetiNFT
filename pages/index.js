@@ -2,15 +2,21 @@ import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Web3Modal from "web3modal"
-import Image from 'next/image'
+import dynamic from 'next/dynamic';
 import {
   nftaddress, nftmarketaddress
 } from '../config'
 
+const ThreeViewer = dynamic(
+  () => import('./ThreeViewer'),
+  { ssr: false }
+);
+
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import Market from '../artifacts/contracts/Market.sol/NFTMarket.json'
 
-let rpcEndpoint = "https://stardust.metis.io/?owner=588";
+// let rpcEndpoint = "https://stardust.metis.io/?owner=588";
+let rpcEndpoint = "http://127.0.0.1:7545";
 
 if (process.env.NEXT_PUBLIC_WORKSPACE_URL) {
   rpcEndpoint = process.env.NEXT_PUBLIC_WORKSPACE_URL
@@ -68,7 +74,8 @@ export default function Home() {
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} className="rounded" />
+                {/* <img src={nft.image} className="rounded" alt="nft-image" /> */}
+                <ThreeViewer src={nft.image} />
                 <div className="p-4">
                   <p style={{ height: '64px' }} className="text-2xl font-semibold">{nft.name}</p>
                   <div style={{ height: '70px', overflow: 'hidden' }}>
